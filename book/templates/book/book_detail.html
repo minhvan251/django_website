@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+<!--{% include 'nav.html' %}-->
+
+{% block content %}
+<h1> {{book.id}} book</h1>
+
+<p> id : {{book.id}}</p>
+<p> title : {{ book.title}}</p>
+<p> author : <a href="">  {{ book.author}} </a></p>
+
+<p> summary : {{ book.summary}}</p>
+<p> publication date : {{ book.publication_date}}</p>
+
+<form method='POST'> {% csrf_token %}
+    <input type="submit" value="Delete" />
+</form>
+
+
+{% endblock %}

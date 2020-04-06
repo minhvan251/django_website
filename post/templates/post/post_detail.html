@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+<!--{% include 'nav.html' %}-->
+
+{% block content %}
+<h1> {{post.id}} blog</h1>
+
+<p> id : {{post.id}}</p>
+<p> title : {{ post.title}}</p>
+<p> author : {{ post.author}}</p>
+<p> summary : {{ post.summary}}</p>
+<p> date post : {{ post.date_posted}}</p>
+
+<form method='POST'> {% csrf_token %}
+    <input type="submit" value="Delete" />
+</form>
+
+
+{% endblock %}

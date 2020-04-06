@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+<!--{% include 'nav.html' %}-->
+
+{% block content %}
+<h1> all books </h1>
+{% for book in books %}
+<p> id : {{book.id}}</p>
+<p> title : <a href="{{book.get_absolute_url}}"> {{ book.title}} </a></p>
+<p> author : <a href="{{book.author.get_absolute_url}}">  {{ book.author}} </a></p>
+<p> summary : {{ book.summary}}</p>
+<p> publication date : {{ book.publication_date}}</p>
+<p>absolute link : {{book.get_absolute_url}}</p>
+<!--<form action='{{post.get_absolute_url}}' method='GET'>-->
+<!--    <input  type="submit" value="Detail" />-->
+<!--</form>-->
+
+
+{% endfor %}
+
+{% endblock %}

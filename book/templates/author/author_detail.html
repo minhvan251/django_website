@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+<!--{% include 'nav.html' %}-->
+
+{% block content %}
+<h1> {{author.id}} author</h1>
+
+<p> firt name : {{author.first_name}}</p>
+<p> last name : {{ author.last_name}}</p>
+<p> date of birth : {{ author.date_of_birth }}</p>
+<p> summary : {{ author.summary}}</p>
+<p> Books : </p>
+<ul>
+{% for bookone in book %}
+<p><a href="{{bookone.get_absolute_url}} "> {{bookone.get_absolute_url}} </a>  </p>
+
+{% endfor %}
+</ul>
+<p>absolute link : {{book.get_absolute_url}}</p>
+
+
+
+
+{% endblock %}
